@@ -1,0 +1,41 @@
+header {
+	text-align: center;
+	height: 50px;
+	clear: both;
+}
+
+main {
+	min-height: 100px;
+	clear: both;
+}
+
+footer {
+	height: 50px;
+	clear: both;
+}
+
+form label {
+	float: left;
+	width: 30%;
+	margin-bottom: 5px;
+}
+
+form input {
+	float: left;
+	width: 60%;
+	margin-bottom: 5px;
+}
+
+form input[type="submit"] {
+	margin-left: 30%;
+}
+
+
+.login, .new_user {
+	width: 300px;
+	margin: auto;
+}
+
+.errors {
+	color: red;
+}

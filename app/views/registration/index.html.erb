@@ -1,0 +1,12 @@
+<h1>Registration</h1>
+
+<%= form_for(@user, url: {action: "create"}) do |user_form| %>
+  <section class="errors"><%= flash[:error] %></section>
+  <%= label_tag(:name, "name") %>
+  <%= user_form.text_field(:name) %>
+  <%= label_tag(:name, "login") %>
+  <%= user_form.text_field(:login) %>
+  <%= label_tag(:name, "pass") %>
+  <%= user_form.password_field(:password) %>
+  <%= submit_tag('send') %>
+<% end %>
