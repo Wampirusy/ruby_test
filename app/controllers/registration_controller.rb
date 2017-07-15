@@ -5,12 +5,16 @@ class RegistrationController < ApplicationController
 	
 	def create
 		@user = User.new(user_params)
-		@user.role = Role.where({:name => 'admin'}).first
-
+		@user.role = Role.where({:name => 'user'}).first
+		
+		p @user,@user.save,@user.errors
+		
 		if @user.save
 			redirect_to :root
 		else
-			flash[:error] = 'zzzzz'
+			flash[:error] = @user.errors
+			
+			redirect_to registration_index_path
 		end
 	end
 	

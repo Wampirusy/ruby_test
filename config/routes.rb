@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 	resources :registration, only: [:index, :create]
 	resources :login, only: [:index, :create]
 	resources :chat
+	resources :admin
+	
+	get 'logout' => 'login#logout'
 	
 #	post 'post_login' => 'login#create'
 	
