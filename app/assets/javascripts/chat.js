@@ -50,15 +50,28 @@ $(function () {
 	};
 
 	$('#send').click(function () {
-		var text = $("#text").val();
-		var recepients = $("#recepients li").map(function(){
-               return $(this).text();
-            }).get();
+		var text = $("#text");
+		var recepients = $("#recepients li");
 
 		send_message({
-			recepients: recepients,
-			text: text
+			recepients: recepients.map(function(){
+               return $(this).text();
+            }).get(),
+			text: text.val()
 		});
+		
+		$("#recepients").html('');
+		text.val('');
+	});
+	
+	$('#broadcast').click(function () {
+		var text = $("#text");
+
+		send_message({
+			text: text.val()
+		});
+		
+		text.val('');
 	});
 
 //	function send() {
@@ -133,6 +146,7 @@ $(function () {
 		user.innerText = event.currentTarget.innerText;
 		
 		$('#recepients').append(user)
+		$('#recepients').append(' ')
 	}
 	
 	function delUser(event) {

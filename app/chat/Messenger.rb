@@ -36,7 +36,7 @@ class Messenger
 				status = case true
 				when user.banned?
 					:banned
-				when $user_sockets[user.name]
+				when $user_sockets[user.name] != nil
 					:online
 				else
 					:offline

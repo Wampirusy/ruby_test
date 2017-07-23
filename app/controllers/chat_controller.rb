@@ -29,9 +29,9 @@ class ChatController < ApplicationController
 
 				sock.onmessage do |data|
 					message = messenger.parse(data)
-			
-					if (message['text'])						
-						if message['recepients'].any?
+					
+					if message['text'] && message['text'].size > 0
+						if message['recepients'] && message['recepients'].any?
 							recepients = message['recepients']
 							recepients.push(user.name)
 							sender.say_to(recepients, message['text'])

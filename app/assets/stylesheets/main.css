@@ -62,10 +62,28 @@ form input[type="submit"] {
 	border: 1px solid #666;
 }
 
+#active-users .offline {
+	color: grey;
+}
+
+#active-users .banned {
+	display: none;
+}
+
+#recepients {
+	margin: 4px;
+}
+
+#recepients li {
+	display: inline;
+	padding-right: 10px;
+}
+
 #text {
 	width: 680px;
 	height: 60px;
 	margin: 4px;
+	padding: 0;
 	float: left;
 }
 
