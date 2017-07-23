@@ -1,10 +1,9 @@
 <h1>Login#show</h1>
 
-<form method="post" class="login" action="<%=   %>">	
-	<%#= post_login_path %>
+<form method="post" class="login">	
 	<section class="errors"><%= flash[:error] %></section>
 	<label>login:</label><input name="login"/>
-	<label>pass:</label><input name="password"/>
+	<label>pass:</label><input name="password" type="password"/>
 	<input type="submit"/>
 	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 </form>

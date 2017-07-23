@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'application#index'
 	
+	get 'chat/sock' => 'chat#sock'
 	resources :registration, only: [:index, :create]
 	resources :login, only: [:index, :create]
 	resources :chat

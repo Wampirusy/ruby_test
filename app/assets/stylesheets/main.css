@@ -39,3 +39,40 @@ form input[type="submit"] {
 .errors {
 	color: red;
 }
+
+/* chat */
+#messages-users {
+	height: 300px;
+}
+
+#messages-users,
+#send-message {
+	width: 800px;
+	margin: auto;
+}
+
+#messages,
+#active-users {
+	float: left;
+	width: 390px;
+	height: 100%;
+	overflow: auto;
+	margin: 4px;
+	background: #fefefe;
+	border: 1px solid #666;
+}
+
+#text {
+	width: 680px;
+	height: 60px;
+	margin: 4px;
+	float: left;
+}
+
+#send,
+#broadcast {
+	width: 100px;
+	/*height: 44px;*/
+	margin: 4px;
+	float: left;
+}

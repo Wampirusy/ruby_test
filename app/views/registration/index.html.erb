@@ -5,12 +5,12 @@
 <%= form_for(@user, url: {action: "create"}) do |user_form| %>
   <%= label_tag(:name, "name") %>
   <%= user_form.text_field(:name) %>
-  <section class="errors"><%= errors['name'].join(' & ') if errors['name'] %></section>
+  <section class="errors"><%= errors['name'].join(' & ') if errors && errors['name'] %></section>
   <%= label_tag(:name, "login") %>
   <%= user_form.text_field(:login) %>
-  <section class="errors"><%= errors['login'].join(' & ') if errors['login'] %></section>
+  <section class="errors"><%= errors['login'].join(' & ') if errors && errors['login'] %></section>
   <%= label_tag(:name, "pass") %>
   <%= user_form.password_field(:password) %>
-  <section class="errors"><%= errors['password'].join(' & ') if errors['password'] %></section>
+  <section class="errors"><%= errors['password'].join(' & ') if errors && errors['password'] %></section>
   <%= submit_tag('send') %>
 <% end %>
