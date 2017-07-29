@@ -11,6 +11,7 @@ class ChatController < ApplicationController
 		end
 	end
 	
+	
 	def sock
 		if user = get_user
 			messenger = Messenger.new(user)

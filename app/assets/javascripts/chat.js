@@ -1,17 +1,8 @@
 $(function () {
 	var url = getCookie("socket_url");
-//
-//	console.log(url)
-
-//	document.getElementById("send").addEventListener("click", send);
-//	document.getElementById("broadcast").addEventListener("click", broadcast);
-//	document.getElementById("logout").addEventListener("click", logout);
 
 	var socket = new WebSocket(url);
-	console.log(socket)
-//	socket.keep_alive = 0;
-	console.log(socket)
-	
+	console.log(socket)	
 
 	socket.onopen = function () {
 		console.log("Connection is established");

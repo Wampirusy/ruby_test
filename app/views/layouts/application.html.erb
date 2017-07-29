@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>FucKing WebChat</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%#= javascript_include_tag 'chat' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<header>
-		<h1>FucKing WebChat</h1>
-		<% if session[:name] == nil %>
-			<a href="<%= login_index_path %>">login</a>
-			<a href="<%= registration_index_url %>">register</a>
-		<% else %>
-			Hi, <%= session[:name] %> (<a href="<%= logout_path %>">logout</a>)
-		<% end %>
-	</header>
+	<head>
+		<title>FucKing WebChat</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
 	
-	<main>
-		<%= yield %>
-	</main>
-	
-	<footer>
-		&copy; 2017, FucKing WebChat
-	</footer>
-</body>
+	<body>
+		<header>
+			<h1>FucKing WebChat</h1>
+			<% if session[:name] %>
+			  Hi, <%= session[:name] %> 
+			<% end %>
+
+			<% menu.each do |item, link| %>
+			  <a href="<%= link %>"><%= item %></a>
+			<% end %>
+		</header>
+
+		<main>
+			<%= yield %>
+		</main>
+
+		<footer>
+			&copy; 2017, FucKing WebChat
+		</footer>
+	</body>
 </html>
